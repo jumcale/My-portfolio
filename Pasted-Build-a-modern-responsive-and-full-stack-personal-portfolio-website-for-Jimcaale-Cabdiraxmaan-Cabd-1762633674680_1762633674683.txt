@@ -1,0 +1,73 @@
+Build a modern, responsive, and full-stack personal portfolio website for Jimcaale Cabdiraxmaan Cabdilaahi Maaweel, founder of Sombuilder Online, from Somaliland.
+The website will showcase my skills, projects, AI and web development experience, resume, and contact options, with both frontend and backend running fully on Replit.
+🔧 Technical Requirements
+Platform: Replit full-stack environment (Node.js + Express backend, HTML/CSS/JS or React frontend)
+Database: Replit Database or SQLite (for storing contact messages and admin updates)
+Email service: Nodemailer or Replit-compatible email API
+Hosting: Deployed automatically through Replit web server
+🌐 Website Structure
+1. Home / Hero Section
+Show my name: Jimcaale Cabdiraxmaan Cabdilaahi Maaweel
+Profession: AI Developer, Web Creator & Entrepreneur
+Include tagline: “Turning smart ideas into digital reality.”
+A professional photo or AI avatar, with background animation or gradient.
+Button links: “View My Work” and “Contact Me”
+2. About Me Section
+Write a short professional bio:
+“I’m Jimcaale, a passionate AI developer and web creator from Somaliland. I specialize in building intelligent digital systems that empower local businesses, startups, and individuals. Founder of Sombuilder Online, I believe technology can transform the future of Africa through innovation, creativity, and smart automation.”
+Include quick info cards:
+🌍 Location: Arabsiyo, Somaliland
+💼 Founder: Sombuilder Online
+✉️ Telegram: @Jimmyabdurahman
+3. Skills Section
+Display with icons and progress bars:
+HTML, CSS, JavaScript
+React & Node.js
+Python & Machine Learning (TensorFlow, scikit-learn)
+MySQL & MongoDB
+Git & Replit
+AI Chatbot Development
+4. Projects Section
+Show 4–6 projects in a grid:
+AI Crypto Trading Bot (MLTraderPro) – Advanced trading bot using ML & risk management.
+Baxnaano Vet Management System – Offline/online veterinary app for Arabsiyo-based clinic.
+Sombuilder School Platform – Custom learning site for students with class-based file storage.
+AI Customer Support Agent – Smart chatbot system for local businesses.
+Each project card should include:
+Image or screenshot
+Short description
+Tech stack
+GitHub or Live Demo link
+5. Resume Section
+Include my professional CV in downloadable PDF format.
+Display an embedded summary (Education, Experience, Certifications).
+Button: “Download Resume”
+6. Contact Section
+Interactive contact form (fields: name, email, message).
+Backend handles submissions and stores messages in the database.
+Automatic email notification to me (using Nodemailer or API).
+Social links: GitHub, LinkedIn, Telegram.
+🔒 Admin Dashboard Features
+Secure login page for admin (username/password).
+Dashboard sections:
+Messages – View all contact form submissions.
+Projects – Add, edit, or delete portfolio projects.
+Profile Settings – Update about info, tagline, and social links.
+Store data in Replit DB or SQLite.
+Use simple admin UI (HTML + Bootstrap or React Admin Template).
+🎨 Design & UX
+Responsive and mobile-friendly.
+Dark/light mode toggle.
+Smooth scrolling, fade-in animations, hover effects.
+Clean typography (use Google Fonts like Poppins or Inter).
+Color palette: #004aad (primary), #0a192f (background), #64ffda (accent).
+🚀 Deployment & Maintenance
+Host directly on Replit (auto-start web server).
+Include .replit config file for automatic startup.
+Easy to update via the admin dashboard without editing code.
+🎯 Goal
+Build a professional online portfolio that:
+Represents my brand as AI Developer & Founder of Sombuilder Online.
+Attracts potential employers, clients, and collaborators.
+Lets me manage content easily from a secure dashboard.
+Works seamlessly offline and online using Replit.

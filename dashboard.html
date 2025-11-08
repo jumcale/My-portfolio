@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-shield-alt"></i> Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#projects" class="nav-item active" data-tab="projects">
+                    <i class="fas fa-project-diagram"></i> Projects
+                </a>
+                <a href="#messages" class="nav-item" data-tab="messages">
+                    <i class="fas fa-envelope"></i> Messages
+                    <span class="badge" id="unread-count">0</span>
+                </a>
+                <a href="#settings" class="nav-item" data-tab="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/" class="nav-item"><i class="fas fa-home"></i> View Portfolio</a>
+                <button id="logout-btn" class="nav-item logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 id="content-title">Projects Management</h1>
+            </div>
+
+            <div class="tab-content" id="projects-tab">
+                <div class="tab-header">
+                    <button class="btn btn-primary" id="add-project-btn">
+                        <i class="fas fa-plus"></i> Add New Project
+                    </button>
+                </div>
+                <div class="projects-list" id="projects-list">
+                    <div class="loading">Loading projects...</div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="messages-tab" style="display: none;">
+                <div class="messages-list" id="messages-list">
+                    <div class="loading">Loading messages...</div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="settings-tab" style="display: none;">
+                <form id="settings-form" class="settings-form">
+                    <div class="form-group">
+                        <label for="tagline">Tagline</label>
+                        <input type="text" id="tagline" name="tagline" placeholder="Your professional tagline">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" rows="5" placeholder="Your professional bio"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="Your location">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telegram">Telegram</label>
+                            <input type="text" id="telegram" name="telegram" placeholder="@username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="github">GitHub URL</label>
+                            <input type="url" id="github" name="github" placeholder="https://github.com/username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn URL</label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Settings
+                    </button>
+                    <div id="settings-message" class="form-message"></div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Project</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="project-form">
+                <input type="hidden" id="project-id">
+                
+                <div class="form-group">
+                    <label for="project-title">Project Title *</label>
+                    <input type="text" id="project-title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-description">Description *</label>
+                    <textarea id="project-description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-tech">Tech Stack (comma-separated) *</label>
+                    <input type="text" id="project-tech" placeholder="React, Node.js, MongoDB" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-image">Image URL</label>
+                    <input type="url" id="project-image" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-github">GitHub URL</label>
+                        <input type="url" id="project-github" placeholder="https://github.com/...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-demo">Demo URL</label>
+                        <input type="url" id="project-demo" placeholder="https://demo.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-order">Order Index</label>
+                        <input type="number" id="project-order" value="0" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="project-featured">
+                            Featured Project
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>
